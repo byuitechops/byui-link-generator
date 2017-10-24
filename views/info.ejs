@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LTI Info</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <% for(var each in info){ %>
+    <p style="text-align: center"><span style="width: 50%; text-align: right"><%= each %></span> | <span><%= info[each] %></span></p>
+    <% } %>
+</body>
+
+</html>

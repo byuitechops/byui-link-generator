@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel = "stylesheet" href = "https://content.byui.edu/file/e7de5943-5a1e-4a64-bbea-ab36a5e21d44/20/course.css" >
+  <script>
+    var settings = <%- settings %> ;
+    var returnUrl = "<%= returnUrl %>"
+    
+    function respond(featureName) {
+      settings.content_items['@graph'][0].text = $('#' + featureName).html().toString();
+      $.ajax({
+        url: returnUrl,
+        type: 'POST',
+        data: settings,
+        dataType: 'json'
+      })
+    }
+
+  </script>
+  <style>
+    .row {
+      display: flex;
+    }
+
+    .row>a,
+    .row>div,
+    .row>p {
+      margin: 5px 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="article">
+    <h4>Select the feature you would like to insert</h4>
+    <div class="row">
+      <p>Feature</p>
+      <p>Preview</p>
+    </div>
+    <div class="row">
+      <a class="option" href="#" onclick="respond('button')">Button</a>
+      <div class="preview" id="button">
+        <a class="button" href="URL">Button Text</a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
