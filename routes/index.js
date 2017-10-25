@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var request = require('request');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', {
@@ -18,7 +18,7 @@ router.post('/', function (req, res, next) {
       "@context": "http://purl.imsglobal.org/ctx/lti/v1/ContentItem",
       "@graph": [{
         "@type": "ContentItem",
-        "text": "",
+        "text": '',
         "mediaType": "text/html",
         "placementAdvice": {
           "presentationDocumentTarget": "embed"
@@ -28,8 +28,9 @@ router.post('/', function (req, res, next) {
   }
 
   res.render('selectFeature', {
-    settings: JSON.stringify(settings),
-    returnUrl: req.session.lti.params.content_item_return_url
+    contentItems: JSON.stringify(settings.content_items),
+    returnUrl: req.session.lti.params.content_item_return_url,
+    courseNumber: (req.session.lti.params.content_item_return_url).split('/')[4]
   })
 })
 
