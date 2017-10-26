@@ -68,6 +68,7 @@
 
     Provider.prototype._valid_oauth = function (req, body, callback) {
       var generated, valid_signature;
+      console.log("params: ", body)
       generated = this.signer.build_signature(req, body, this.consumer_secret);
       console.log("Signatures: ", valid_signature, generated, body.oauth_signature)
       valid_signature = generated === body.oauth_signature;
