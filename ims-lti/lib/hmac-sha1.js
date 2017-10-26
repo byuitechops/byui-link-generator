@@ -63,6 +63,7 @@
       if (body.tool_consumer_info_product_family_code === 'canvas') {
         originalUrl = url.parse(originalUrl).pathname;
       }
+      console.log("protocol: ", protocol, req.connection.encrypted)
       if (protocol === void 0) {
         encrypted = req.connection.encrypted;
         protocol = (encrypted && 'https') || 'http';
