@@ -9,11 +9,10 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-  console.log(req.body)
   console.log(req.session)
   var settings = {
     lti_message_type: "ContentItemSelection",
-    lti_version: req.session.lti.params.lti_version,
+    lti_version: 'LTI-1p0',
     content_items: {
       "@context": "http://purl.imsglobal.org/ctx/lti/v1/ContentItem",
       "@graph": [{
