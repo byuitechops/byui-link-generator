@@ -35,7 +35,7 @@ module.exports = function (userSettings) {
         if (err) {
           return next(err);
         }
-
+        console.log(key, secret, nonceStore)
         req.lti = new lti.Provider(key, secret, nonceStore);
         req.lti.valid_request(req, function (err) {
           if (err) {

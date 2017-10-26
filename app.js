@@ -27,7 +27,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
-
 }));
 
 app.use(session({
@@ -37,7 +36,7 @@ app.use(session({
 }))
 
 // LTI middleware for use
-/********   This middleware and ims-lti dependency do not work with content-item, I did my own fixes as a work-around **********/
+/********   This middleware and ims-lti dependency do not work with content-item, I did my own fixes as a work-around, and pulled them out of node modules to push **********/
 
 app.use(ltiMiddleware({
   consumer_key: "byui-designer",
