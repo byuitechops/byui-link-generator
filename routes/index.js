@@ -2,8 +2,13 @@
 var express = require('express');
 var router = express.Router();
 var templates = "<p class='error'>There was an error loading the templates<?p>";
+var canvas;
 if (!process.env.URL) {
-  var canvas = require('../modules/canvasApi');
+  canvas = require('../modules/canvasApi');
+} else {
+  canvas = function () {
+    console.log("Cannot use canvas calls currently");
+  }
 }
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -31,8 +36,6 @@ router.post('/', function (req, res, next) {
         }
       }]
     }
-
-    console.log(tempateFiles)
 
     res.render('selectFeature', {
       contentItems: JSON.stringify(content_items),

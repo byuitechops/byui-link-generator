@@ -1,6 +1,9 @@
 /* eslint-env node */
+var token = ""
 if (!process.env.URL) {
-  var token = require('../canvasAuth').token
+  token = require('../canvasAuth').token
+} else {
+  token = 'no token available'
 }
 var request = require('request')
 var domain = 'https://byui.instructure.com';
