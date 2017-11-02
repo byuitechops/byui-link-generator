@@ -2,14 +2,8 @@
 var express = require('express');
 var router = express.Router();
 var templates = "<p class='error'>There was an error loading the templates<?p>";
-var canvas;
-if (!process.env.URL) {
-  canvas = require('../modules/canvasApi');
-} else {
-  canvas = function () {
-    console.log("Cannot use canvas calls currently");
-  }
-}
+var canvas = require('../modules/canvasApi');
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', {
