@@ -1,6 +1,7 @@
 /* eslint-env node */
 var token = ""
 if (!process.env.URL) {
+  console.log(process.env)
   token = require('../canvasAuth').token
 } else {
   token = 'no token available'
