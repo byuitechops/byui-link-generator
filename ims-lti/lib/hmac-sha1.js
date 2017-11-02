@@ -70,7 +70,6 @@
       }
       parsedUrl = url.parse(originalUrl, true);
       hitUrl = protocol + '://' + req.headers.host + parsedUrl.pathname;
-      console.log("Others: ", hitUrl, parsedUrl, req.method, consumer_secret, token)
       return this.build_signature_raw(hitUrl, parsedUrl, req.method, body, consumer_secret, token);
     };
 

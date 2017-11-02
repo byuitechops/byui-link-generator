@@ -1,0 +1,11 @@
+h1.activity,
+h2.activity,
+.splash h1.activity,
+.splash h2.activity {
+  background: #bcd2e5;
+}
+
+h1.activity:before,
+h2.activity:before {
+  background: #6ca4d4;
+}

@@ -10,6 +10,6 @@
     </lticm:options>
     <lticm:property name="icon_url">https://secure.byui.edu/cas/favicon.ico</lticm:property>
     <lticm:property name="selection_height">750</lticm:property>
-    <lticm:property name="selection_width">750</lticm:property>
+    <lticm:property name="selection_width">900</lticm:property>
   </blti:extensions>
 </cartridge_basiclti_link>

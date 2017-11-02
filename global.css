@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+.ui-accordion .ui-accordion-content {
+  padding: 1em;
+}
+
+.ui-accordion .ui-accordion-header {
+  margin-bottom: 0;
+  padding: 16px 24px 12px 30px;
+  padding-left: 30px;
+}
+
+.byui-popover {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
+.ic-Table.ic-Table--rubric tr td:first-child,
+.ic-Table.ic-Table--rubric tr th {
+  background-color: #2d5d94;
+  color: #ffffff;
+}
+
+.ic-Table.ic-Table--rubric tr:first-child th {
+  background-color: #1e435d;
+  color: #ffffff;
+}
+
+
+/***********************************************************
+    ACTIVTY BANNERS
+***********************************************************/
+
+h1.activity,
+h2.activity,
+.splash h1.activity,
+.splash h2.activity {
+  position: relative;
+  margin: 20px 0 30px;
+  padding: 10px 0 10px 200px;
+  color: #000;
+  font-size: 32px;
+  background: #d69595;
+  line-height: 1.35;
+  font-family: 'Open Sans', verdana, Arial, Helvetica, sans-serif;
+}
+
+h1.prepare,
+h2.prepare,
+.splash h1.prepare,
+.splash h2.prepare {
+  background: #8ed0cb;
+}
+
+h1.teach,
+h2.teach,
+.splash h1.teach,
+.splash h2.teach {
+  background: #9abad6;
+}
+
+h1.ponder,
+h2.ponder,
+.splash h1.ponder,
+.splash h2.ponder {
+  background: #baa4d4;
+}
+
+
+/****** TOA Pseudo Text ******/
+
+h1.activity:before,
+h2.activity:before {
+  content: "ACTIVITY";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-top: 22px;
+  padding-right: 25px;
+  width: 140px;
+  height: 100%;
+  font-size: 14px;
+  color: #fff;
+  font-family: 'Open Sans';
+  text-align: center;
+  background: #9f5454;
+}
+
+h1.prepare:before,
+h2.prepare:before {
+  content: "PREPARE";
+  background: #49807b;
+}
+
+h1.teach:before,
+h2.teach:before {
+  content: "TEACH ONE ANOTHER";
+  padding-top: 13px;
+  background: #537491;
+}
+
+h1.ponder:before,
+h2.ponder:before {
+  content: "PONDER \0026  PROVE";
+  padding-top: 13px;
+  background: #8163a5;
+}
+
+
+/****** TOA Pseduo Icon ******/
+
+h1.activity:after,
+h2.activity:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 110px;
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  background-size: cover;
+}
+
+
+
+/***********************************************************
+    PREPARE ICONS
+***********************************************************/
+
+h1.readings:after,
+h2.readings:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/reading.png);
+}
+
+h1.video:after,
+h2.video:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/video.png);
+}
+
+h1.preAssessment:after,
+h2.preAssessment:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/preAssessment.png);
+}
+
+h1.checkUnderstanding:after,
+h2.checkUnderstanding:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/checkUnderstanding.png);
+}
+
+h1.caseStudy:after,
+h2.caseStudy:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/caseStudy.png);
+}
+
+h1.research:after,
+h2.research:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/research.png);
+}
+
+
+/***********************************************************
+    TEACH ONE ANOTHER ICONS
+***********************************************************/
+
+h1.iceBreaker:after,
+h2.iceBreaker:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/iceBreaker.png);
+}
+
+h1.insightSharing:after,
+h2.insightSharing:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/insight.png);
+}
+
+h1.peerAccountability:after,
+h2.peerAccountability:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/peerAccountability.png);
+}
+
+h1.supportForum:after,
+h2.supportForum:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/supportForum.png);
+}
+
+h1.topicDiscussion:after,
+h2.topicDiscussion:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/topicDiscussion.png);
+}
+
+h1.studyGroup:after,
+h2.studyGroup:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/studyGroup.png);
+}
+
+h1.groupProblemSolving:after,
+h2.groupProblemSolving:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/groupProblemSolving.png);
+}
+
+h1.groupPresentation:after,
+h2.groupPresentation:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/groupPresentation.png);
+}
+
+h1.jigsawActivity:after,
+h2.jigsawActivity:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/jigsawActivity.png);
+}
+
+h1.rolePlayDiscussion:after,
+h2.rolePlayDiscussion:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/rolePlayDiscussion.png);
+}
+
+h1.structuredDebate:after,
+h2.structuredDebate:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/structuredDebate.png);
+}
+
+h1.peerFeedback:after,
+h2.peerFeedback:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/peerFeedback.png);
+}
+
+h1.fieldExperience:after,
+h2.fieldExperience:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/fieldExperience.png);
+}
+
+h1.groupProject:after,
+h2.groupProject:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/groupProject.png);
+}
+
+
+/***********************************************************
+    PONDER AND PROVE ICONS
+***********************************************************/
+
+h1.reflection:after,
+h2.reflection:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/reflection.png);
+}
+
+h1.assessment:after,
+h2.assessment:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/assessment.png);
+}
+
+h1.practiceApply:after,
+h2.practiceApply:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/practiceApply.png);
+}
+
+h1.demonstrateProficiency:after,
+h2.demonstrateProficiency:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/demonstrateProficiency.png);
+}
+
+h1.presentation:after,
+h2.presentation:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/presentation.png);
+}
+
+
+/* Other Icon */
+
+h1.other:after,
+h2.other:after {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/other.png);
+}
+
+
+
+/*Images and Callouts*/
+
+
+/* Images / Floating */
+
+.left {
+  float: left;
+  display: block;
+  margin: 12px 15px 12px 0;
+}
+
+.center {
+  display: block;
+  margin: 12px auto;
+}
+
+.right {
+  float: right;
+  display: block;
+  margin: 12px 0 12px 15px;
+}
+
+
+/* For an element containing floated elements */
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  opacity: 0;
+  height: 0;
+}
+
+
+/* Sizing */
+
+.full {
+  width: 100%;
+}
+
+.half {
+  width: 50%;
+}
+
+.quarter {
+  width: 25%;
+}
+
+
+/* Captions for images */
+
+span.caption {
+  text-align: center;
+  font-style: italic;
+  padding: 5px;
+  background: #e0e0e0;
+  box-sizing: border-box;
+}
+
+.right + span.caption {
+  clear: both;
+  float: right;
+  margin: 0 0 12px 15px;
+}
+
+.center + span.caption {
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.left + span.caption {
+  clear: both;
+  float: left;
+  margin: 0 15px 12px 0;
+}
+
+.full + span.caption {
+  width: 100%;
+}
+
+.quarter + span.caption {
+  width: 25%;
+}
+
+.half + span.caption {
+  width: 50%;
+}
+
+
+/* Hanging indent for reference pages */
+
+.hangingIndent {
+  padding-left: 22px;
+  text-indent: -22px;
+}
+
+#article{
+  
+}
