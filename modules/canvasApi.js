@@ -1,11 +1,5 @@
 /* eslint-env node */
-var token = ""
-if (!process.env.URL) {
-  console.log(process.env)
-  token = require('../canvasAuth').token
-} else {
-  token = 'no token available'
-}
+var token = require('../canvasAuth').token
 var request = require('request')
 var domain = 'https://byui.instructure.com';
 var auth = {
@@ -28,7 +22,7 @@ function getTemplateFolderId(courseNumber) {
     }).on('error', function (err) {
       reject(err)
     })
-  });
+  })
 }
 
 function getFilesByFolder(folderId) {
