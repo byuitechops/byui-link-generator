@@ -368,12 +368,8 @@
         <h3>Templates can be uploaded to the 'Web Files/templates' folder</h3>
       </div>
       <div class="row">
-        <div class="option">
-          <% templates.forEach(function(template){ %>
-            <a href="#" onclick="preview('<%= template.url %>')" class="Button margin">
-              <%= template.display_name %>
-            </a>
-            <% }) %>
+        <div class="option" id="templates">
+          
         </div>
         <div class="preview" id="templateOut">
           <h4>Please select an option to the left</h4>
@@ -412,8 +408,15 @@
 
     $('#button input:checkbox').change(updateButton)
 
+    
+    // Change pages
     function changeFocus(id) {
-      $('.page').toggleClass('visible')
+      if(!$("#"+id).hasClass('visible')){
+        $('.page').toggleClass('visible')
+        if(id === 'pageTwo'){
+          loadTemplates();
+        }
+      }
     }
 
     // Accordion generator
@@ -422,6 +425,24 @@
       var content = $('#accordion textarea').val();
       $('.accordion h3').text(heading);
       $('.accordion div').html(content);
+    }
+    
+    //init templates
+    function loadTemplates(){
+      $('#templateOut').html('<h4>Loading Templates...</h4>')
+      if($.trim($('#templates').html()) === ''){
+        $.get('/templates').done(function(response){
+          if(response.templates.errors){
+            $('#templateOut').html('<h4>No template files found</h4>')
+          } else {
+            response.templates.forEach(function(template){
+              var out = '<a href="#" onclick="preview(' + template.url + ')" class="Button margin">' + template.display_name + '</a>'
+              $('#templates').append(out)
+            })
+            $('#templateOut').html('<h4>Select a template to the Left</h4>')
+          }
+        })
+      }
     }
     
     // Preview templates
