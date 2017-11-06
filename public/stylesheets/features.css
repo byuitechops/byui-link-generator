@@ -1,0 +1,78 @@
+.row {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: #ccc solid 1px;
+  padding: 5px;
+}
+
+.option,
+.row > div,
+.row > p {
+  margin: 5px 20px;
+  box-sizing: border-box;
+}
+
+.option,
+.row > p {
+  min-width: 25%;
+  width: 25%;
+  max-width: 25%;
+}
+
+.preview {
+  flex-grow: 1;
+}
+
+#article {
+  padding: 20px;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  margin: 10px 0 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+#article #header {
+  display: block !important;
+}
+
+.page {
+  display: none;
+}
+
+.page.visible {
+  display: block;
+}
+
+nav {
+  display: flex;
+}
+
+.tab {
+  flex-grow: 1;
+  text-align: center;
+  background: #0C4496;
+  color: #fff;
+  height: 40px;
+}
+
+.tab:hover,
+.tab:active,
+.tab:visited {
+  color: white;
+}
+
+.embedded > #article {
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+.margin {
+  margin: 5px 0;
+}
