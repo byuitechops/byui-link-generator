@@ -364,9 +364,7 @@
       </form>
     </div>
     <div id="pageTwo" class="page">
-      <div class="row">
-        <h3>Templates can be uploaded to the 'Web Files/templates' folder</h3>
-      </div>
+      <h3>Templates can be uploaded to the 'Web Files/templates' folder</h3>
       <div class="row">
         <div class="option" id="templates"></div>
         <div class="preview" id="templateOut">
@@ -434,7 +432,8 @@
             $('#templateOut').html('<h4>No template files found</h4>')
           } else {
             response.templates.forEach(function(template){
-              var out = '<a href="#" onclick="preview(' + template.url + ')" class="Button margin">' + template.display_name + '</a>'
+              console.log(template)
+              var out = '<a href="#" onclick="preview(' + "'" + template.url + "'" + ')" class="Button margin">' + template.display_name + '</a>'
               $('#templates').append(out)
             })
             $('#templateOut').html('<h4>Select a template to the Left</h4>')
