@@ -441,6 +441,8 @@
             })
             $('#templateOut').html('<h4>Select a template to the Left</h4>')
           }
+        }).fail(function(){
+            $('#templateOut').html('<h4>Templating currently not supported on prod</h4>')
         })
       }
     }
