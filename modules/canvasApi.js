@@ -1,5 +1,10 @@
 /* eslint-env node */
-var token = require('../canvasAuth').token
+var token
+if (process.env.IsHeroku) {
+  token = "placeholder"
+} else {
+  token = require('../canvasAuth').token
+}
 var request = require('request')
 var domain = 'https://byui.instructure.com';
 var auth = {
