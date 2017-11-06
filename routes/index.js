@@ -36,13 +36,9 @@ router.post('/', function (req, res, next) {
 })
 
 router.get('/templates', function (req, res, next) {
-  if (!req.session.lti) {
-    res.render('error', {
-      message: "Not authenticated",
-      error: {
-        status: "401",
-        stack: "Please authenticate and try again"
-      }
+  if (!req.session.lti || process.env.IsHeroku) {
+    res.status(400).send({
+      error: "Canvas Authentication currently disabled"
     })
   } else {
     var ltiParams = req.session.lti.params
