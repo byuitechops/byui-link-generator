@@ -15,6 +15,7 @@ router.get('/', function (req, res, next) {
 router.post('/', function (req, res, next) {
   var ltiParams = req.session.lti.params
   var courseNumber = (ltiParams.content_item_return_url).split('/')[4];
+  var courseClass = ltiParams.context_label.toLowerCase().replace(" ", "") //PSYCH 342T
 
   var content_items = {
     "@context": "http://purl.imsglobal.org/ctx/lti/v1/ContentItem",
@@ -31,7 +32,8 @@ router.post('/', function (req, res, next) {
   res.render('selectFeature', {
     contentItems: JSON.stringify(content_items),
     returnUrl: req.session.lti.params.content_item_return_url,
-    courseNumber: courseNumber
+    courseNumber: courseNumber,
+    courseClass: courseClass
   })
 })
 

@@ -10,8 +10,8 @@ $(document).ready(function () {
   });
   $('#styleguide-tabs-demo-minimal').tabs()
   var courseNumber = document.location.pathname.split('/')[2]
-  if (document.querySelector('.byui') !== null) {
-    document.querySelector('.byui').insertAdjacentHTML('beforeend', '<link type="text/css" rel="stylesheet" href="https://byui.instructure.com/courses/' + courseNumber + '/file_contents/course%20files/Web%20Files/course-min.css" >')
+  if (document.querySelector('.byui-custom') !== null) {
+    document.querySelector('.byui-custom').insertAdjacentHTML('beforeend', '<link type="text/css" rel="stylesheet" href="https://byui.instructure.com/courses/' + courseNumber + '/file_contents/course%20files/Web%20Files/course-min.css" >')
   }
 });
 

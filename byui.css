@@ -9,10 +9,6 @@
   padding-left: 30px;
 }
 
-.byui-popover {
-  text-decoration-line: underline;
-  text-decoration-style: dotted;
-}
 
 .ic-Table.ic-Table--rubric tr td:first-child,
 .ic-Table.ic-Table--rubric tr th {
@@ -23,6 +19,80 @@
 .ic-Table.ic-Table--rubric tr:first-child th {
   background-color: #1e435d;
   color: #ffffff;
+}
+
+
+/***************************************************
+         BYUI THEME RULES DO-NOT-EDIT!!
+***************************************************/
+
+.byui {
+  max-width: 960px;
+  padding-bottom: 3px;
+}
+
+.byui h3 {
+  color: var(--theme-dark);
+}
+
+.byui h4 {
+  color: #575757;
+}
+
+.byui .Button--primary {
+  background: var(--theme-dark);
+  border: none;
+}
+
+.byui .ui-accordion .ui-accordion-header.ui-state-default.ui-state-active,
+.byui .ui-accordion .ui-accordion-header.ui-state-default {
+  background: var(--theme-dark);
+  color: #fff;
+}
+
+.byui .pad-box-mini {
+  color: var(--theme-dark)
+}
+
+.byui .caption {
+  position: relative;
+  top: -12px;
+  background: #fff;
+  border: #c7cdd1 solid;
+  border-width: 0 1px 1px 1px;
+  font-style: normal;
+  font-size: .9rem;
+  border-radius: 0 0 4px 4px;
+}
+
+.byui .activity,
+.byui .activity:before {
+  border-radius: 4px;
+  color: #fff;
+}
+
+.byui .activity:before {
+  background: var(--theme-dark);
+  color: #fff;
+}
+
+.byui .activity {
+  background: var(--theme-light);
+  color: #3D3D3D;
+}
+
+.byui .activity.grey:before {
+  background: #3D3D3D;
+  color: #fff;
+}
+
+.byui .activity.grey {
+  background: #3D3D3D;
+  color: #fff;
+}
+
+.byui #header img {
+  width: 100%;
 }
 
 
@@ -64,6 +134,7 @@ h2.ponder,
 .splash h2.ponder {
   background: #baa4d4;
 }
+
 
 
 /****** TOA Pseudo Text ******/
@@ -108,6 +179,7 @@ h2.ponder:before {
 }
 
 
+
 /****** TOA Pseduo Icon ******/
 
 h1.activity:after,
@@ -121,6 +193,7 @@ h2.activity:after {
   height: 75px;
   background-size: cover;
 }
+
 
 
 
@@ -157,6 +230,7 @@ h1.research:after,
 h2.research:after {
   background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/research.png);
 }
+
 
 
 /***********************************************************
@@ -234,6 +308,7 @@ h2.groupProject:after {
 }
 
 
+
 /***********************************************************
     PONDER AND PROVE ICONS
 ***********************************************************/
@@ -264,12 +339,14 @@ h2.presentation:after {
 }
 
 
+
 /* Other Icon */
 
 h1.other:after,
 h2.other:after {
   background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/other.png);
 }
+
 
 
 
@@ -296,6 +373,7 @@ h2.other:after {
 }
 
 
+
 /* For an element containing floated elements */
 
 .clearfix:after {
@@ -305,6 +383,7 @@ h2.other:after {
   opacity: 0;
   height: 0;
 }
+
 
 
 /* Sizing */
@@ -320,6 +399,7 @@ h2.other:after {
 .quarter {
   width: 25%;
 }
+
 
 
 /* Captions for images */
@@ -362,6 +442,7 @@ span.caption {
 }
 
 
+
 /* Hanging indent for reference pages */
 
 .hangingIndent {
@@ -369,6 +450,4 @@ span.caption {
   text-indent: -22px;
 }
 
-#article{
-  
-}
+#article {}

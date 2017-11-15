@@ -1,25 +1,3 @@
-.byui {
-  max-width: 1000px;
-}
-
-.byui h1,
-.byui h3,
-.byui h5 {
-  color: #0C4496;
-}
-
-.byui h1 {
-  font-weight: 700;
-}
-
-.byui h2 {
-  font-size: 1.65em;
-}
-
-.byui h1,
-.byui h2,
-.byui h3,
-.byui h4,
-.byui h5 {
-  margin: 6px 0;
+.byui-custom {
+  background: #ccc;
 }
