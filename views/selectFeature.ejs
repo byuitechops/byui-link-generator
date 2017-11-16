@@ -19,11 +19,10 @@
       --theme-dark: #0076b6;
       --theme-light: #BDE9FF;
     }
-
   </style>
 </head>
 
-<body class="is-inside-submission-frame">
+<body class="is-inside-submission-frame" style="min-width: 500px;">
   <nav>
     <a class="tab" href='#' onclick="changeFocus('pageOne')">
       <h4>Campus Features</h4>
@@ -83,7 +82,9 @@
           </select><br>
           <a target="_blank" href="https://docs.google.com/document/d/1ZoDam0yGbEkZX9i1o1ognWJFp6Jqh9IP6eeyOR23oj4/">View docs</a>
         </div>
-        <div class="preview" id="orgTemplateOut"></div>
+        <div class="preview" id="orgTemplateOut">
+          <p>Please select an option to the left</p>
+        </div>
         <div class="hidden">
           <%- templates %>
         </div>
