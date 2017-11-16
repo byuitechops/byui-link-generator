@@ -8,14 +8,22 @@
   <meta name="viewport" content="initial-scale=1.0">
   <link type="text/css" rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/82d059ca224b79f71841c76bfb9c7b7c/variables-750d72b9d3e5d522f965bf904110c132.css">
   <link type="text/css" rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-688b35b63b.css">
+  <link type="text/css" rel="stylesheet" href="https://instructure-uploads.s3.amazonaws.com/account_107060000000000001/attachments/136160/byui.css">
+  <!--Below is the link to the global css, which may need updated in the future-->
   <link type="text/css" rel="stylesheet" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/no_variables/bundles/wiki_page-46e7e026f6.css">
-  <link type="text/css" rel="stylesheet" href="https://instructure-uploads.s3.amazonaws.com/account_107060000000000001/attachments/52868/online.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link type="text/css" rel="stylesheet" href="/stylesheets/features.css">
+  <style>
+    .byui {
+      --theme-dark: #0076b6;
+      --theme-light: #BDE9FF;
+    }
+
+  </style>
 </head>
 
-<body class="is-inside-submission-frame embedded">
+<body class="is-inside-submission-frame">
   <nav>
     <a class="tab" href='#' onclick="changeFocus('pageOne')">
       <h4>Campus Features</h4>
@@ -31,7 +39,80 @@
         <p>Feature</p>
         <p>Preview</p>
       </div>
-      <!-- This pattern for new features (new row for each with link and preview, preview has an id template at the bottom) -->
+      <div class="row" id="orgTemplate">
+        <div class="option">
+          <a class="Button" href="#" onclick="respond('orgTemplate')">Insert Activity Template</a><br>
+          <select id="selectTemplate">
+            <option disabled selected value>Select a template</option>
+            <option value="1">Generic Instruction Page</option>
+            <option value="2">Prepare - Read/Watch/Listen</option>
+            <option value="3">Prepare - Read/Watch/Listen (Instructions in another activity)</option>
+            <option value="4">Prepare - Pre-Assesment</option>
+            <option value="5">Prepare - Interview</option>
+            <!--<option value="6">Prepare - Concept Matching</option>
+            <option value="7">Prepare - Note Taking</option>
+            <option value="8">Prepare - Information Gathering</option>
+            <option value="9">Prepare - Scholarly Research</option>
+            <option value="10">Prepare - Learning Contract</option>
+            <option value="11">Prepare - Project Plan</option>
+            <option value="12">Prepare - Sign Up</option>
+            <option value="13">Prepare - Quiz Writing</option>
+            <option value="14">TOA - Presentation</option>
+            <option value="15">TOA - Case Study</option>
+            <option value="16">TOA - Field Experience</option>
+            <option value="17">TOA - Group Problem Solving</option>
+            <option value="18">TOA - Group Project</option>
+            <option value="19">TOA - Icebreaker</option>
+            <option value="20">TOA - Insight Sharing</option>
+            <option value="21">TOA - Jigsaw Teaching</option>
+            <option value="22">TOA - Peer Accountability</option>
+            <option value="23">TOA - Peer Feedback</option>
+            <option value="24">TOA - Q&amp;A/Support Forum</option>
+            <option value="25">TOA - Role Play Discussion</option>
+            <option value="26">TOA - Structured Debate</option>
+            <option value="27">TOA - Study Group</option>
+            <option value="28">TOA - Topic Discussion</option>
+            <option value="29">Ponder/Prove - Unanswered Questions</option>
+            <option value="30">Ponder/Prove - Quiz</option>
+            <option value="31">Ponder/Prove - Exam</option>
+            <option value="32">Ponder/Prove - Presentation</option>
+            <option value="33">Ponder/Prove - Project</option>
+            <option value="34">Ponder/Prove - Essay</option>
+            <option value="35">Ponder/Prove - Worksheet-Workbook</option>
+            <option value="36">Ponder/Prove - Portfolio</option>-->
+          </select><br>
+          <a target="_blank" href="https://docs.google.com/document/d/1ZoDam0yGbEkZX9i1o1ognWJFp6Jqh9IP6eeyOR23oj4/">View docs</a>
+        </div>
+        <div class="preview" id="orgTemplateOut"></div>
+        <div class="hidden">
+          <%- templates %>
+        </div>
+      </div>
+      <div class="row" id="templateSmall">
+        <div class="option">
+          <a class="Button" href="#" onclick="respond('templateSmall')">Insert Page Template</a>
+        </div>
+        <div class="preview" id="templateSmallOut">
+          <div class="byui <%= courseClass %>">
+            <div id="header"><img src="https://byui.instructure.com/courses/773/files/129575/preview" alt="Banner" width="3000" height="272" data-api-endpoint="https://byui.instructure.com/api/v1/courses/773/files/129575" data-api-returntype="File" /></div>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <p>*As a note, The editor does not use heading 1, as the page title occupies that role.<br />Congratulations on making it to week 1! There hasn't been a lot required of you up to this point, in fact, nothing!</p>
+            <h2 class="activityBanner readings">Readings</h2>
+            <p><a class="Button Button--primary" href="#">Primary Button</a></p>
+            <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <span class="byui-popover" title="Put your desired text here." data-tooltip="{&quot;tooltipClass&quot;:&quot;popover popover-padded&quot;, &quot;position&quot;:&quot;right&quot;}">pop-up</span> eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <span class="pad-box-mini border border-trbl border-round right quarter"><em>This is a callout box which can be used to emphasize text.</em></span> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+            </p>
+            <p><span><img id="demoImage" class="left quarter" style="max-width: 600px;" src="https://content.byui.edu/file/e7de5943-5a1e-4a64-bbea-ab36a5e21d44/21/McKayLibrary.jpg" alt="McKay Library" /><span id="demoCaption" class="caption">Insert Caption Text Here</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </span>
+            </p>
+            <p><span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
+            <div id="this_page_1" class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist">
+              <h3 id="ui-id-1" class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" aria-controls="ui-id-2" aria-expanded="false" aria-selected="false">Example Dropdown</h3>
+              <div id="ui-id-2" class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" style="display: none;" role="tabpanel" aria-labelledby="ui-id-1" aria-hidden="true">This is the content</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row" id="button">
         <div class="option">
           <a class="Button" href="#" onclick="respond('button')">Insert Button</a>
@@ -183,32 +264,6 @@
           </div>
         </div>
       </div>
-      <div class="row" id="templateSmall">
-        <div class="option">
-          <a class="Button" href="#" onclick="respond('templateSmall')">Insert Page Template</a>
-        </div>
-        <div class="preview" id="templateSmallOut">
-          <div class="byui <%= courseClass %>">
-            <div id="header"><img src="https://byui.instructure.com/courses/773/files/129575/preview" alt="Banner" width="3000" height="272" data-api-endpoint="https://byui.instructure.com/api/v1/courses/773/files/129575" data-api-returntype="File" /></div>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-            <h4>Heading 4</h4>
-            <p>*As a note, The editor does not use heading 1, as the page title occupies that role.<br />Congratulations on making it to week 1! There hasn't been a lot required of you up to this point, in fact, nothing!</p>
-            <h2 class="activity prepare readings">Readings</h2>
-            <h2 class="activity prepare readings grey">Readings</h2>
-            <p><a class="Button Button--primary" href="#">Primary Button</a></p>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <span class="byui-popover" title="Put your desired text here." data-tooltip="{&quot;tooltipClass&quot;:&quot;popover popover-padded&quot;, &quot;position&quot;:&quot;right&quot;}">pop-up</span> eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <span class="pad-box-mini border border-trbl border-round right quarter"><em>This is a callout box which can be used to emphasize text.</em></span> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-            </p>
-            <p><span><img id="demoImage" class="left quarter" style="max-width: 600px;" src="https://content.byui.edu/file/e7de5943-5a1e-4a64-bbea-ab36a5e21d44/21/McKayLibrary.jpg" alt="McKay Library" /><span id="demoCaption" class="caption">Insert Caption Text Here</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </span>
-            </p>
-            <p><span>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
-            <div id="this_page_1" class="accordion ui-accordion ui-widget ui-helper-reset" role="tablist">
-              <h3 id="ui-id-1" class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" aria-controls="ui-id-2" aria-expanded="false" aria-selected="false">Example Dropdown</h3>
-              <div id="ui-id-2" class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" style="display: none;" role="tabpanel" aria-labelledby="ui-id-1" aria-hidden="true">This is the content</div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="row" id="bannerLarge">
         <div class="option">
           <a class="Button" href="#" onclick="respond('bannerLarge')">Insert Large Banner</a>
@@ -229,6 +284,7 @@
           </div>
         </div>
       </div>
+
       <!--  update the row id="-------", onclick parameter, the id on the preview, and the inner HTML in the preview
       ****** No comments allowed in the featureOut element *******
       <div class="row" id="feature">

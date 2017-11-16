@@ -3,6 +3,14 @@ var express = require('express');
 var router = express.Router();
 var templates = "<p class='error'>There was an error loading the templates<?p>";
 var canvas = require('../modules/canvasApi');
+var ejs = require('ejs');
+var fs = require('fs');
+
+require.extensions['.ejs'] = function (module, filename) {
+    module.exports = fs.readFileSync(filename, 'utf8');
+};
+
+var activityTemplates = require('../views/templates.ejs')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -14,8 +22,8 @@ router.get('/', function (req, res, next) {
 /* Handle LTI launch */
 router.post('/', function (req, res, next) {
   var ltiParams = req.session.lti.params
-  var courseNumber = (ltiParams.content_item_return_url).split('/')[4];
   var courseClass = ltiParams.context_label.toLowerCase().replace(" ", "") //PSYCH 342T
+  var courseNumber = (ltiParams.content_item_return_url).split('/')[4];
 
   var content_items = {
     "@context": "http://purl.imsglobal.org/ctx/lti/v1/ContentItem",
@@ -33,7 +41,8 @@ router.post('/', function (req, res, next) {
     contentItems: JSON.stringify(content_items),
     returnUrl: req.session.lti.params.content_item_return_url,
     courseNumber: courseNumber,
-    courseClass: courseClass
+    courseClass: courseClass,
+    templates: ejs.render(activityTemplates, {courseClass: courseClass})
   })
 })
 
