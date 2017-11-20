@@ -87,8 +87,11 @@ function changeBanner(e) {
     classNames = category.value + " other";
   } else {
     category.style.display = "none";
+    var heading = category.value.split(' ')[0];
+    var newHeading = heading.charAt(0).toUpperCase() + heading.substr(1);
+    bannerText = newHeading + " - " + bannerText;
   }
-  h1Code = '<h1 class="activity ' + classNames + '">' + bannerText + '</h1>';
+  h1Code = '<h2 class="activityBanner ' + classNames.split(' ')[1] + '">' + bannerText + '</h2>';
   bannerDiv.innerHTML = h1Code;
 }
 

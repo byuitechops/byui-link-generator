@@ -32,9 +32,21 @@
   padding-bottom: 3px;
 }
 
+/* It might be safe to declare global defaults to the theme variable like this: 
+
+.byui{
+--theme-dark: #;
+--theme-med1: #;
+--theme-med2: #;
+}
+
+I'm not sure the sub-level themes will ovverride these, but I think they will
+
+*/
+
 .byui h2,
 .byui h4 {
-  color: var(--theme-dark);
+  color: var(--theme-med1);
 }
 
 .byui h3,
@@ -102,12 +114,14 @@
   color: red
 }
 
-
-
 /***********************************************************
     ACTIVTY BANNERS
 ***********************************************************/
-
+/* These use an .activityBanner class to avoid conflict with
+   the current .activity class. For a cleaner transition, the
+   .activityBanner class could be change to .activity, and 
+   the old rules removed.
+*/
 
 /* Begin New Banner styles*/
 
@@ -130,7 +144,8 @@
   content: "";
   width: 60px;
   height: 60px;
-  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/caseStudy.png);
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/other.png);
+  background-color: #0076C6;
   background-size: cover;
   border-radius: 50%;
   border: solid #0076C6 3px;
@@ -146,15 +161,117 @@
 }
 
 .byui h2.activityBanner.themed::before {
-  border-color: var(--theme-dark)
+  background-color: var(--theme-dark);
+  border-color: var(--theme-dark);
 }
 
 .byui h2.activityBanner.themed {
-  border-color: var(--theme-dark)
+  border-color: var(--theme-dark);
 }
 
+.byui h2.activityBanner.readings::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/reading.png);
+}
 
+.byui h2.activityBanner.video::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/video.png);
+}
 
+.byui h2.activityBanner.preAssessment::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/preAssessment.png);
+}
+
+.byui h2.activityBanner.checkUnderstanding::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/checkUnderstanding.png);
+}
+
+.byui h2.activityBanner.caseStudy::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/caseStudy.png);
+}
+
+.byui h2.activityBanner.research::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/research.png);
+}
+
+.byui h2.activityBanner.iceBreaker::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/iceBreaker.png);
+}
+
+.byui h2.activityBanner.insightSharing::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/insight.png);
+}
+
+.byui h2.activityBanner.peerAccountability::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/peerAccountability.png);
+}
+
+.byui h2.activityBanner.supportForum::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/supportForum.png);
+}
+
+.byui h2.activityBanner.topicDiscussion::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/topicDiscussion.png);
+}
+
+.byui h2.activityBanner.studyGroup::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/studyGroup.png);
+}
+
+.byui h2.activityBanner.groupProblemSolving::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/groupProblemSolving.png);
+}
+
+.byui h2.activityBanner.groupPresentation::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/groupPresentation.png);
+}
+
+.byui h2.activityBanner.jigsawActivity::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/jigsawActivity.png);
+}
+
+.byui h2.activityBanner.rolePlayDiscussion::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/rolePlayDiscussion.png);
+}
+
+.byui h2.activityBanner.structuredDebate::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/structuredDebate.png);
+}
+
+.byui h2.activityBanner.peerFeedback::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/peerFeedback.png);
+}
+
+.byui h2.activityBanner.fieldExperience::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/fieldExperience.png);
+}
+
+.byui h2.activityBanner.groupProject::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/groupProject.png);
+}
+
+.byui h2.activityBanner.reflection::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/reflection.png);
+}
+
+.byui h2.activityBanner.assessment::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/assessment.png);
+}
+
+.byui h2.activityBanner.practiceApply::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/practiceApply.png);
+}
+
+.byui h2.activityBanner.demonstrateProficiency::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/demonstrateProficiency.png);
+}
+
+.byui h2.activityBanner.presentation::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/presentation.png);
+}
+
+.byui h2.activityBanner.other::before {
+  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/other.png);
+}
 
 /* End new styles */
 

@@ -9,24 +9,29 @@
 }
 
 .b380 {
-  --theme-dark: #346;
-  --theme-light: #cde;
+  --theme-dark: #35393c;
+  --theme-med1: #0a70b0;
+  --theme-med2: #536069;
 }
 
 .psych111 {
-  --theme-dark: #e84040;
-  --theme-light: #FDD8D8;
+  --theme-dark: #25130e;
+  --theme-med1: #ae0d0d;
+  --theme-med2: #725c5c;
 }
 
 .fhgen130 {
-  --theme-dark: #443328;
-  --theme-light: #E3D5CE;
+  --theme-dark: #45361f;
+  --theme-med1: #926011;
+  --theme-med2: #b6410d;
 }
 
 .cs246 {
-  --theme-dark: #245325;
-  --theme-light: #C6E2C6;
+  --theme-dark: #494d4f;
+  --theme-med1: #0873a1;
+  --theme-med2: #57666d;
 }
+
 
 .psych342 {
   --theme-dark: #e84040;
@@ -34,7 +39,7 @@
 }
 
 
-h2.activityBanner {
+.byui h2.activityBanner {
   font-size: 1.3em;
   font-weight: 400;
   text-transform: uppercase;
@@ -46,7 +51,7 @@ h2.activityBanner {
   margin: 35px 0 25px;
 }
 
-h2.activityBanner::before {
+.byui h2.activityBanner::before {
   position: absolute;
   left: 15px;
   top: -15px;
@@ -59,7 +64,7 @@ h2.activityBanner::before {
   border: solid #0076C6 3px;
 }
 
-h2.activityBanner::after {
+.byui h2.activityBanner::after {
   content: "BYU-I Learning Model";
   background: none;
   position: absolute;
@@ -68,10 +73,10 @@ h2.activityBanner::after {
   margin-top: .5em;
 }
 
-h2.activityBanner.themed::before {
+.byui h2.activityBanner.themed::before {
   border-color: var(--theme-dark)
 }
 
-h2.activityBanner.themed {
+.byui h2.activityBanner.themed {
   border-color: var(--theme-dark)
 }
