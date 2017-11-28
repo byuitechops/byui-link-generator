@@ -65,16 +65,16 @@ router.get('/templates', function (req, res, next) {
 })
 
 router.get('/home_page', function(req, res, next){
-  if(!req.session.lti || process.env.IsHeroku) {
-    res.status(400).send({
-      error: "Canvas Authentication currently disabled"
+  if(!req.session.lti) {
+    res.status(401).send({
+      error: "Please log in to Canvas"
     })
   } else {
     var ltiParams = req.session.lti.params;
     var courseName = ltiParams.context_title;
     var courseNumber = (ltiParams.content_item_return_url).split('/')[4];
     var courseClass = ltiParams.context_label.toLowerCase().replace(" ", "") //PSYCH 342T
-    canvas.getModules(courseNumber).then(generation.renderHomePage.bind(null, courseName, courseNumber, courseClass)).then(function(response){
+    generation.renderHomePage(courseName, courseNumber, courseClass).then(function(response){
       res.json({
         homePage: response
       })
