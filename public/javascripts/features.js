@@ -115,3 +115,10 @@ $(document).ready(function () {
 $('#selectTemplate').on("change", function () {
   $('#orgTemplateOut').html($('#template_' + this.value).html())
 })
+
+//Load Home Page
+function loadHomePage(){
+  $.get('/home_page', function(response){
+    $('#homeTemplateOut').html(response.homePage);
+  })
+}

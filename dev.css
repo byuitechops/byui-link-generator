@@ -1,11 +1,13 @@
 .tim {
-  --theme-dark: #e84040;
-  --theme-light: #FDD8D8;
+  --theme-dark: #25130e;
+  --theme-med1: #ae0d0d;
+  --theme-med2: #725c5c;
 }
 
 .ben {
-  --theme-dark: #346;
-  --theme-light: #cde;
+  --theme-dark: #494d4f;
+  --theme-med1: #0873a1;
+  --theme-med2: #57666d;
 }
 
 .b380 {
@@ -39,44 +41,4 @@
 }
 
 
-.byui h2.activityBanner {
-  font-size: 1.3em;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #555;
-  border: #0076C6 solid;
-  border-width: 3px 0;
-  position: relative;
-  padding: 4px 20px 3px 100px;
-  margin: 35px 0 25px;
-}
-
-.byui h2.activityBanner::before {
-  position: absolute;
-  left: 15px;
-  top: -15px;
-  content: "";
-  width: 60px;
-  height: 60px;
-  background-image: url(https://content.byui.edu/file/599082e0-3e89-4fd9-ac69-2615865d63c7/88/icons.zip/icons/caseStudy.png);
-  background-size: cover;
-  border-radius: 50%;
-  border: solid #0076C6 3px;
-}
-
-.byui h2.activityBanner::after {
-  content: "BYU-I Learning Model";
-  background: none;
-  position: absolute;
-  right: 20px;
-  font-size: .6em;
-  margin-top: .5em;
-}
-
-.byui h2.activityBanner.themed::before {
-  border-color: var(--theme-dark)
-}
-
-.byui h2.activityBanner.themed {
-  border-color: var(--theme-dark)
-}
+  

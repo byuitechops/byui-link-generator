@@ -50,8 +50,29 @@ function getFile(url) {
   })
 }
 
+function getModules(courseNumber){
+  return new Promise(function(resolve, reject){
+    request(domain + '/api/v1/courses/' + courseNumber + '/modules', auth, function(err, data, body){
+      resolve(body)
+    }).on('error', function(err){
+      reject(err)
+    })
+  })
+}
+
+function renderHomePage(courseName, modules){
+  return new Promise(function(resolve, reject){
+    console.log("body: ", body)
+    console.log("Course name: ", courseName)
+    resolve()
+  })
+}
+
+
 module.exports = {
   getTemplateFolderId: getTemplateFolderId,
   getFilesByFolder: getFilesByFolder,
-  getFile: getFile
+  getFile: getFile,
+  getModules: getModules,
+  renderHomePage: renderHomePage
 }
