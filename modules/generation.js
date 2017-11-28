@@ -1,6 +1,6 @@
 var ejs = require('ejs');
 
-function renderHomePage(courseName, courseId, modules) {
+function renderHomePage(courseName, courseId, courseClass, modules) {
   return new Promise(function (resolve, reject) {
     var homePageTemplate = require('../views/homePage.ejs')
     var firstModuleId = modules[0].id;
@@ -8,8 +8,7 @@ function renderHomePage(courseName, courseId, modules) {
     var homePage = ejs.render(homePageTemplate, {
       courseName: courseName,
       courseId: courseId,
-      firstModuleId: firstModuleId,
-      resourcesId: resourcesId
+      courseClass: courseClass
     })
     resolve(homePage)
   })

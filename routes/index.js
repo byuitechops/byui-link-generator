@@ -73,7 +73,8 @@ router.get('/home_page', function(req, res, next){
     var ltiParams = req.session.lti.params;
     var courseName = ltiParams.context_title;
     var courseNumber = (ltiParams.content_item_return_url).split('/')[4];
-    canvas.getModules(courseNumber).then(generation.renderHomePage.bind(null, courseName, courseNumber)).then(function(response){
+    var courseClass = ltiParams.context_label.toLowerCase().replace(" ", "") //PSYCH 342T
+    canvas.getModules(courseNumber).then(generation.renderHomePage.bind(null, courseName, courseNumber, courseClass)).then(function(response){
       res.json({
         homePage: response
       })
