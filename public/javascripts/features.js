@@ -73,30 +73,25 @@ function preview(url) {
 
 //  Activity Banner Builder
 var selected = document.getElementById("activitySelected"),
-  category = document.getElementById("activityCategory"),
   bannerDiv = document.getElementById("bannerOut")
 
 function changeBanner(e) {
   var classNames = selected.value,
     bannerText = selected.options[selected.selectedIndex].label,
-    h1Code
+    h2Code
 
   if (bannerText === "Other") {
-    category.style.display = "inline";
     bannerText = "Activity Name";
-    classNames = category.value + " other";
+    classNames = "other";
   } else {
-    category.style.display = "none";
-    var heading = category.value.split(' ')[0];
-    var newHeading = heading.charAt(0).toUpperCase() + heading.substr(1);
+    var newHeading = $('#activitySelected :selected').parent().attr('label')
     bannerText = newHeading + " - " + bannerText;
   }
-  h1Code = '<h2 class="activityBanner ' + classNames.split(' ')[1] + '">' + bannerText + '</h2>';
-  bannerDiv.innerHTML = h1Code;
+  h2Code = '<h2 class="activity ' + classNames.split(' ')[1] + '">' + bannerText + '</h2>';
+  bannerDiv.innerHTML = h2Code;
 }
 
 selected.onchange = changeBanner;
-category.onchange = changeBanner;
 
 //  Accordion init
 $(document).ready(function () {
@@ -116,9 +111,3 @@ $('#selectTemplate').on("change", function () {
   $('#orgTemplateOut').html($('#template_' + this.value).html())
 })
 
-//Load Home Page
-function loadHomePage(){
-  $.get('/home_page', function(response){
-    $('#homeTemplateOut').html(response.homePage);
-  })
-}

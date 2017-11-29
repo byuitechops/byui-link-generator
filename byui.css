@@ -430,3 +430,7 @@ span.caption {
 .byui .slick-slider{
   margin-left: 20px;
 }
+
+.byui .slick-slide img{
+  width: 100%;
+}

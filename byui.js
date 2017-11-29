@@ -21,7 +21,8 @@ document.body.appendChild(slickScriptTheme);
 
 $(document).ready(function () {
   var courseNumber = document.location.pathname.split('/')[2]
-  var courseClass = $("#breadcrumbs ul li:nth-child(2)").text().toLowerCase().replace(" ", "");
+  var courseClass = $("#breadcrumbs ul li:nth-child(2)").text().split(".")
+  courseClass = courseClass[courseClass.length -1].toLowerCase().replace(" ", "");
 
   /* Initialize accordion*/
   $('div.accordion').accordion({
@@ -42,14 +43,27 @@ $(document).ready(function () {
     var resources = $('#resources')
     $.get("/api/v1/courses/" + courseNumber + "/modules", function (modules) {
       var resourcesId;
-      modules.forEach(function (module) {
+      var generate = false;
+      if($('#navigation .lessons').hasClass('generate')){
+        $('#navigation .lessons').html("")
+        generate = true;
+      }
+      modules.forEach(function (module, index) {        
         if (module.name == "Student Resources") {
           resourcesId = module.id;
         }
+        if(generate){
+           generateModuleLink(module.id, index)
+         }
       })
       start.prop('href', "/courses/" + courseNumber + "/modules#module_" + modules[0].id);
       syllabus.prop('href', "/courses/" + courseNumber + "/assignments/syllabus");
       resources.prop('href', "/courses/" + courseNumber + "/modules#module_" + resourcesId);
+
+      /* Generate Module links */
+      function generateModuleLink(id, index){
+        $('#navigation .lessons').append("<a href='/courses/" + courseNumber + "/modules#module_" + id + "'>" + (index + 1) + "</a>")
+      }
     })
     $.get("https://byui.instructure.com/api/v1/courses/773/enrollments", function (people) {
       people.forEach(function (person) {
@@ -66,7 +80,6 @@ $(document).ready(function () {
     $(hashId).parent().addClass('focus');
     $(hashId).parent().addClass(courseClass);
   }
-
 });
 
 $(window).on("load", function () {
