@@ -60,19 +60,9 @@ function getModules(courseNumber){
   })
 }
 
-function renderHomePage(courseName, modules){
-  return new Promise(function(resolve, reject){
-    console.log("body: ", body)
-    console.log("Course name: ", courseName)
-    resolve()
-  })
-}
-
-
 module.exports = {
   getTemplateFolderId: getTemplateFolderId,
   getFilesByFolder: getFilesByFolder,
   getFile: getFile,
-  getModules: getModules,
-  renderHomePage: renderHomePage
+  getModules: getModules
 }

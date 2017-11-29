@@ -39,3 +39,26 @@
   --theme-med1: #ae0d0d;
   --theme-med2: #725c5c;
 }
+
+@keyframes pulse {
+  0%, 70%{
+    background: initial;
+  }
+  30%, 100%{
+    background: var(--theme-med1);
+  }
+}
+
+@keyframes pulseShadow {
+  0%, 70%{
+    box-shadow: initial;
+  }
+  30%, 100%{
+    box-shadow: var(--theme-med2) 0 0 15px;
+  }
+}
+
+.focus{
+  animation: pulseShadow 1.5s forwards;
+  transform-origin: center;
+}

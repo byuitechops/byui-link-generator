@@ -399,3 +399,34 @@ span.caption {
     padding-top: 5px;
     color: var(--theme-med2);
   }
+
+
+/******************************************
+             Module Highlighting
+********************************************/
+
+@keyframes pulseShadow {
+  0%, 70%{
+    box-shadow: initial;
+  }
+  30%, 100%{
+    box-shadow: var(--theme-med2) 0 0 15px;
+  }
+}
+
+.focus{
+  animation: pulseShadow 1.5s forwards;
+  transform-origin: center;
+}
+
+/******************************************
+             Slick Slider
+********************************************/
+
+.byui .slick-prev:before, .byui .slick-next:before{
+  color: var(--theme-med1);
+}
+
+.byui .slick-slider{
+  margin-left: 20px;
+}
