@@ -47,9 +47,8 @@
     /*Logic to plug in variables */
    $('.option').click(function(event){
      var code = event.target.getAttribute("value")
-     var link = $('#link').val();
-     console.log(code, link)
-     $('#link').val(link + "{{" + code + "}}")
+     var link = ($('#link').val());
+     $('#link').val(link + "{" + code + "}")
    })
     
 
