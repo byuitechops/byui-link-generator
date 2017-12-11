@@ -1,16 +1,12 @@
 /* eslint-env node */
 var express = require('express');
 var router = express.Router();
-var canvas = require('../modules/canvasApi');
-var generation = require('../modules/generation');
 var ejs = require('ejs');
 var fs = require('fs');
 
 require.extensions['.ejs'] = function (module, filename) {
-    module.exports = fs.readFileSync(filename, 'utf8');
+  module.exports = fs.readFileSync(filename, 'utf8');
 };
-
-var activityTemplates = require('../views/templates.ejs')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -22,10 +18,7 @@ router.get('/', function (req, res, next) {
 /* Handle LTI launch */
 router.post('/', function (req, res, next) {
   var ltiParams = req.session.lti.params
-  var courseClass = ltiParams.context_label.toLowerCase().replace(" ", "") //PSYCH 342T
-  var courseNumber = (ltiParams.content_item_return_url).split('/')[4];
-  var courseName = ltiParams.context_title;
-  var homePage = generation.renderHomePage(courseName, courseNumber, courseClass);
+  var username = ltiParams.custom_canvas_user_login_id;
   var content_items = {
     "@context": "http://purl.imsglobal.org/ctx/lti/v1/ContentItem",
     "@graph": [{
@@ -34,42 +27,36 @@ router.post('/', function (req, res, next) {
       "mediaType": "text/html",
       "placementAdvice": {
         "presentationDocumentTarget": "embed"
-        }
+      }
       }]
   }
 
-  res.render('selectFeature', {
-    contentItems: JSON.stringify(content_items),
-    returnUrl: req.session.lti.params.content_item_return_url,
-    courseNumber: courseNumber,
-    courseClass: courseClass,
-    templates: ejs.render(activityTemplates, {courseClass: courseClass}),
-    homePage: homePage
-  })
+  res.render('selectFeature')
 })
 
-router.get('/templates', function (req, res, next) {
-  if (!req.session.lti || process.env.IsHeroku) {
-    res.status(400).send({
-      error: "Canvas Authentication currently disabled"
-    })
-  } else {
-    var ltiParams = req.session.lti.params
-    var courseNumber = (ltiParams.content_item_return_url).split('/')[4];
-
-    canvas.getTemplateFolderId(courseNumber).then(canvas.getFilesByFolder).then(function (response) {
-      res.json({
-        templates: response
-      })
-    })
+/* Build URL with parameters */
+router.post('/return', function (req, res, next) {
+  console.log("PARAMS", req.query)
+  var url = req.query.url
+  var ltiParams = req.session.lti.params
+  var fname = ltiParams.lis_person_name_given
+  var lname = ltiParams.lis_person_name_family
+  var email = ltiParams.lis_person_contact_email_primary
+  var fullName = ltiParams.lis_person_name_full
+  var username = ltiParams.custom_canvas_user_login_id;
+  var content_items = {
+    "@context": "http://purl.imsglobal.org/ctx/lti/v1/ContentItem",
+    "@graph": [{
+      "@type": "ContentItem",
+      "text": '',
+      "mediaType": "text/html",
+      "placementAdvice": {
+        "presentationDocumentTarget": "embed"
+      }
+      }]
   }
-})
 
-router.get('/preview', function (req, res, next) {
-  var url = req.query.url;
-  canvas.getFile(url).then(function (file) {
-    res.send(file)
-  })
+  res.redirect(url)
 })
 
 module.exports = router;

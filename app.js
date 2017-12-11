@@ -14,7 +14,7 @@ if (!process.env.URL) {
   https.createServer({
     pfx: fs.readFileSync('crt/crt.pfx'),
     passphrase: 'byuicontent'
-  }, app).listen(1820)
+  }, app).listen(1810)
 }
 
 // view engine setup
@@ -39,8 +39,8 @@ app.use(session({
 /********   This middleware and ims-lti dependency do not work with content-item, I did my own fixes as a work-around, and pulled them out of node modules to push **********/
 
 app.use(ltiMiddleware({
-  consumer_key: "byui-designer",
-  consumer_secret: "byui-designer-secret"
+  consumer_key: "byui-links",
+  consumer_secret: "byui-link-secret"
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
