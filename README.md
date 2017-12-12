@@ -1,2 +1,2 @@
-# byui-design-lti
-Designer tools via LTI rich text editor integration
+# byui-link-generator
+A LTI tool to generate and process urls in Canvas
