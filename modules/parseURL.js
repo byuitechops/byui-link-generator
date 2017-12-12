@@ -6,7 +6,10 @@ function parseURL(urlString, ltiParams) {
     var fullName = ltiParams.lis_person_name_full
     var username = ltiParams.custom_canvas_user_login_id;
     
+    var firsthalf = urlString.split('{')[0];
     var element = urlString.split('{')[1].split('}')[0];
+    var secondhalf = urlString.split('}')[1];
+    
     var newElement;
     
     if (element == 'fname') {
@@ -23,7 +26,8 @@ function parseURL(urlString, ltiParams) {
         console.error('Element not recognized');
     }
     
-    var newUrl = urlString.replace(element, newElement);
+    var newUrl = firsthalf + newElement + secondhalf;
+    console.log(newUrl);
     
     return newUrl;
 }
